@@ -1,4 +1,4 @@
-﻿@using Asp.Net.Bmi.Models
+﻿@using ASP.NetBMI.Models
 @model Bmi
 @{
     ViewData["Title"] = "BMI Calculator";
@@ -11,9 +11,9 @@
             <input asp-for="Height" />
             <br>
             <label asp-for="Weight"></label><br>
-            <input type="text" name="weight" value="weight">
-            <br /><br />
             <input asp-for="Weight" />
+            <br /><br />
+            <button type="submit" class="btn btn-primary">Calculate</button>
         </form> 
     </div>
     <div class="col-md-6">
