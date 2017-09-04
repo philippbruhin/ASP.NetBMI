@@ -1,20 +1,22 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using Asp.Net.Bmi.Models
+@model Bmi
+@{
+    ViewData["Title"] = "BMI Calculator";
 }
 
 <div class="row margin-50">
     <div class="col-md-6">
         <form action="/">
-            <strong>Size in cm:</strong><br />
-            <input type="text" name="size" value="size">
+            <label asp-for="Height"></label><br />
+            <input asp-for="Height" />
             <br>
-            <strong>Weight in kg</strong><br>
+            <label asp-for="Weight"></label><br>
             <input type="text" name="weight" value="weight">
             <br /><br />
-            <input type="submit" value="Calculate">
+            <input asp-for="Weight" />
         </form> 
     </div>
     <div class="col-md-6">
-        <p>Spalte 2</p>
+        <div id="result"></div>
     </div>
 </div>
