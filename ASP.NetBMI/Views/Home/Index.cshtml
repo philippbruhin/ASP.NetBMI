@@ -6,13 +6,16 @@
 
 <div class="row margin-50">
     <div class="col-md-6">
-        <form action="/">
-            <label asp-for="Height"></label><br />
-            <input asp-for="Height" />
-            <br>
-            <label asp-for="Weight"></label><br>
-            <input asp-for="Weight" />
-            <br /><br />
+        <form class="bmi-form" asp-action="Bmi" method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Height"></label><br />
+                <input class="form-control" asp-for="Height" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight"></label><br>
+                <input class="form-control" asp-for="Weight" />
+            </div>
             <button type="submit" class="btn btn-primary">Calculate</button>
         </form> 
     </div>
