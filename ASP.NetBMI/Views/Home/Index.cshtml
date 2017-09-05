@@ -6,7 +6,10 @@
 
 <div class="row margin-50">
     <div class="col-md-6">
-        <form class="bmi-form" asp-action="Bmi" method="post">
+        <!-- Use without ajax-->
+        <!-- <form class="bmi-form" asp-action="Bmi" method="post"> -->
+        <!-- Use with ajax-->
+        <form asp-action="Bmi2" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result">
             <div asp-validation-summary="All"></div>
             <div class="form-group">
                 <label asp-for="Height"></label><br />
@@ -23,3 +26,7 @@
         <div id="result"></div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+}

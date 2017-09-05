@@ -18,11 +18,31 @@ namespace ASP.NetBMI.Controllers
             return View("Index");
         }
 
+        public IActionResult Bmi()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Bmi(Models.Bmi data)
         {
-            ViewBag.Value = _bmiService.Calculcate(data);
-            return View("Bmi");
+            if (data.Weight > 0 && data.Weight < 300
+                && data.Height > 30 && data.Height < 250)
+            {
+                ViewBag.Value = _bmiService.Calculcate(data);
+                return PartialView("Bmi");
+            }
+            return Content("Curious input data. Please try again");
+
         }
+
+        // Use following action without ajax
+
+        //public IActionResult Bmi(Models.Bmi data)
+        //{
+        //    ViewBag.Value = _bmiService.Calculcate(data);
+        //    return View("Bmi");
+        //}
 
     }
 }
