@@ -32,7 +32,7 @@ namespace ASP.NetBMI.Controllers
                 ViewBag.Value = _bmiService.Calculcate(data);
                 return PartialView("Bmi");
             }
-            return Content("Curious input data. Please try again");
+            return Content("<div class=\"alert alert-danger\"><strong>Error!</strong> Curious input data. Please try again!</div>");
 
         }
 

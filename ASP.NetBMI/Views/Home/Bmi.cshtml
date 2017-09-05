@@ -18,16 +18,16 @@
 }
  
 
-<div class="row margin-50">
-    <h1>Your BMI: @value</h1>
+<div class="row">
+    <p><strong>Your BMI: @value</strong></p>
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Description</th>
-                <th>From</th>
-                <th>To</th>
-            </tr>
+        <tr>
+            <th>Description</th>
+            <th>From</th>
+            <th>To</th>
+        </tr>
         </thead>
 
         @{
@@ -44,3 +44,7 @@
         }
     </table>
 </div>
+
+@section Scripts{
+    <script src="lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+}
