@@ -17,27 +17,30 @@
     };
 }
  
-<p>Your BMI: @value</p>
 
-<table>
-    <thead>
-    <tr>
-        <th>Beschreibung</th>
-        <th>Von</th>
-        <th>Bis </th>
-    </tr>
-    </thead>
-    
-    @{
-        double old = 0;
-        foreach (var entry in data)
-        {
-            <tr style="@(value > old && value <= entry.Max ? "background: lightgray" : "")">
-                <td>@entry.Text</td>
-                <td>@old</td>
-                <td>@entry.Max</td>
+<div class="row margin-50">
+    <h1>Your BMI: @value</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>From</th>
+                <th>To</th>
             </tr>
-            old = entry.Max;
+        </thead>
+
+        @{
+            double old = 0;
+            foreach (var entry in data)
+            {
+                <tr class="@(value > old && value <= entry.Max ? "warning" : "")">
+                    <td>@entry.Text</td>
+                    <td>@old</td>
+                    <td>@entry.Max</td>
+                </tr>
+                old = entry.Max;
+            }
         }
-    }
-</table>
+    </table>
+</div>
