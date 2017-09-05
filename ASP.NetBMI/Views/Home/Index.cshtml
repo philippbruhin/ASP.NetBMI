@@ -9,7 +9,7 @@
         <!-- Use without ajax-->
         <!-- <form class="bmi-form" asp-action="Bmi" method="post"> -->
         <!-- Use with ajax-->
-        <form asp-action="Bmi2" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result">
+        <form asp-action="Bmi" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result">
             <div asp-validation-summary="All"></div>
             <div class="form-group">
                 <label asp-for="Height"></label><br />
@@ -27,6 +27,9 @@
     </div>
 </div>
 
+@* Package Manager Console Input: PM> Install-Package Microsoft.jQuery.Unobtrusive.Ajax -Version 3.2.3
+    jQuery Validation *@
+
 @section Scripts{
-    <script src="lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 }
